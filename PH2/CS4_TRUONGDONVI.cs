@@ -18,7 +18,7 @@ namespace QLDLNB_PH1.PH2
             InitializeComponent();
         }
 
-        private void Fix_PhanCong_Click(object sender, EventArgs e)
+        public virtual void Fix_PhanCong_Click(object sender, EventArgs e)
         {
             DataGridViewRow OldRow = dataGridView2.SelectedCells[0].OwningRow;
 
@@ -72,7 +72,7 @@ namespace QLDLNB_PH1.PH2
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        protected void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow Row = dataGridView2.SelectedCells[0].OwningRow;
             textMAHP.Text = Row.Cells["MAHP"].Value.ToString();
@@ -83,7 +83,7 @@ namespace QLDLNB_PH1.PH2
 
         }
 
-        private void addPHANCONG_Click(object sender, EventArgs e)
+        public virtual void addPHANCONG_Click(object sender, EventArgs e)
         {
             string MAHP = textMAHP.Text;
             string MAGV = textMAGV.Text;
@@ -109,7 +109,7 @@ namespace QLDLNB_PH1.PH2
             }
         }
 
-        private void deletePHANCONG_Click(object sender, EventArgs e)
+        public virtual void deletePHANCONG_Click(object sender, EventArgs e)
         {
             string MAHP = textMAHP.Text;
             string MAGV = textMAGV.Text;

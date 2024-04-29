@@ -153,7 +153,7 @@ namespace QLDLNB_PH1.PH2
 
         #endregion
 
-        protected DataGridView dataGridView1;
+        public static DataGridView dataGridView1;
         protected Button button1;
         protected Button button2;
         protected Button button3;

@@ -270,22 +270,22 @@
 
         #endregion
 
-        private Panel panel1;
-        private Label labelMACT;
-        private Button Fix_PhanCong;
-        public TextBox textHK;
-        public TextBox textMACT;
-        public TextBox textNAM;
-        public TextBox textMAGV;
-        private Label labelNAM;
-        private Label labelHK;
-        private Label labelMAGV;
-        private Label labelMAHP;
-        public TextBox textMAHP;
-        private Label label1;
-        private Panel panel2;
-        private DataGridView dataGridView2;
-        private Button deletePHANCONG;
-        private Button addPHANCONG;
+        protected Panel panel1;
+        protected Label labelMACT;
+        protected Button Fix_PhanCong;
+        protected TextBox textHK;
+        protected TextBox textMACT;
+        protected TextBox textNAM;
+        protected TextBox textMAGV;
+        protected Label labelNAM;
+        protected Label labelHK;
+        protected Label labelMAGV;
+        protected Label labelMAHP;
+        protected TextBox textMAHP;
+        protected Label label1;
+        protected Panel panel2;
+        public static DataGridView dataGridView2;
+        protected Button deletePHANCONG;
+        protected Button addPHANCONG;
     }
 }

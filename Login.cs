@@ -78,7 +78,9 @@ namespace QLDLNB_PH1
 
                         if (roles.Contains("RL_TRUONG_KHOA"))
                         {
-
+                            CS5_TRUONGKHOA frmEmployee5 = new CS5_TRUONGKHOA();
+                            frmEmployee5.Show();
+                            this.Hide();
                         }
                         else if (roles.Contains("RL_TRUONG_DON_VI"))
                         {

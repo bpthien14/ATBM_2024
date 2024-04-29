@@ -18,8 +18,6 @@ namespace QLDLNB_PH1.PH2
     public partial class CS1_BasicEmployee : Form
     {
 
-        public static DataGridViewRow OLDdataGridViewRow = null;
-        //public static DataGridView OLDdataGridView;
         public CS1_BasicEmployee()
         {
             InitializeComponent();
@@ -27,7 +25,7 @@ namespace QLDLNB_PH1.PH2
 
         }
 
-        protected void button1_Click(object sender, EventArgs e)
+        public virtual void button1_Click(object sender, EventArgs e)
         {
             string query = "SELECT * FROM SEC_ADM.NHANSU";
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
@@ -64,7 +62,7 @@ namespace QLDLNB_PH1.PH2
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
-        protected void FixPhone_Click(object sender, EventArgs e)
+        public virtual void FixPhone_Click(object sender, EventArgs e)
         {
             if (UserBUS.Instance.FixPhone(dataGridView1))
             {

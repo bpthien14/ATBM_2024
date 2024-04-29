@@ -264,11 +264,61 @@ namespace QLDLNB_PH1.Connector
     }
     class NVienDTO
     {
+        private string manv;
+        public string MANV
+        {
+            get { return manv; }
+            set { manv = value; }
+        }
+
+        private string hoten;
+        public string HOTEN
+        {
+            get { return hoten; }
+            set { hoten = value; }
+        }
+
+        private string phai;
+        public string PHAI
+        {
+            get { return phai; }
+            set { phai = value; }
+        }
+
+        private DateTime ngaysinh;
+        public DateTime NGAYSINH
+        {
+            get { return ngaysinh; }
+            set { ngaysinh = value; }
+        }
+
+        private decimal phucap;
+        public decimal PHUCAP
+        {
+            get { return phucap; }
+            set { phucap = value; }
+        }
+
         private string dt;
         public string DT
         {
             get { return dt; }
             set { dt = value; }
         }
+
+        private string vaitro;
+        public string VAITRO
+        {
+            get { return vaitro; }
+            set { vaitro = value; }
+        }
+
+        private string madv;
+        public string MADV
+        {
+            get { return madv; }
+            set { madv = value; }
+        }
     }
+
 }

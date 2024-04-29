@@ -103,7 +103,7 @@ namespace QLDLNB_PH1.Connector
                         }
 
                         connection.Open();
-                        MessageBox.Show(parameters.ToString()+" "+query);
+                        //MessageBox.Show(parameters.ToString()+" "+query);
                     
                         rowsAffected = command.ExecuteNonQuery();
                        

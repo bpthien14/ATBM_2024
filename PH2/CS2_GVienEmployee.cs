@@ -27,7 +27,7 @@ namespace QLDLNB_PH1.PH2
 
         }
 
-        public void ViewDangKy_Click(object sender, EventArgs e)
+        public virtual void ViewDangKy_Click(object sender, EventArgs e)
         {
             string query = "SELECT * FROM SEC_ADM.UV_GIANGVIEN_DANGKY";
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);

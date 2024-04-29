@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace QLDLNB_PH1.Connector
 {
@@ -212,7 +213,38 @@ namespace QLDLNB_PH1.Connector
 
             return UserDAO.Instance.Add_KHoc(user);
         }
+        public bool Add_NhanVien(DataGridView data)
+        {
+            // Lấy dữ liệu từ các TextBox
+            string MANV = CS5_TRUONGKHOA.textMANV.Text;
+            string HOTEN = CS5_TRUONGKHOA.textHOTEN.Text;
+            string PHAI = CS5_TRUONGKHOA.textPHAI.Text;
+            string DT = CS5_TRUONGKHOA.textDIENTHOAI.Text;
+            string VAITRO = CS5_TRUONGKHOA.textVAITRO.Text;
+            string MADV = CS5_TRUONGKHOA.textMADV.Text;
+            // Tiếp tục lấy dữ liệu từ các TextBox khác
 
- 
+            // Tạo đối tượng NVienDTO và gán giá trị
+            NVienDTO user = new NVienDTO();
+            {
+                user.MANV = MANV;
+                user.HOTEN = HOTEN;
+                user.PHAI = PHAI;
+                user.DT = DT;
+                user.VAITRO = VAITRO;
+                user.MADV = MADV;
+                
+                user.NGAYSINH = Convert.ToDateTime(CS5_TRUONGKHOA.textNGSINH.Text);
+                user.PHUCAP = Convert.ToDecimal(CS5_TRUONGKHOA.textPHUCAP.Text);
+                
+                // Tiếp tục gán các giá trị khác
+            }
+
+            // Gọi hàm Add_NhanVien từ UserDAO để thêm nhân viên
+            return UserDAO.Instance.Add_NhanVien(user);
+        }
+
+
+
     }
 }
