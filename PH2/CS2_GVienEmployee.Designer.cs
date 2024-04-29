@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             ViewPhanCong = new Button();
             ViewDangKy = new Button();
@@ -35,9 +35,9 @@
             // 
             // ViewPhanCong
             // 
-            ViewPhanCong.Location = new Point(370, 382);
+            ViewPhanCong.Location = new Point(121, 36);
             ViewPhanCong.Name = "ViewPhanCong";
-            ViewPhanCong.Size = new Size(129, 67);
+            ViewPhanCong.Size = new Size(128, 67);
             ViewPhanCong.TabIndex = 8;
             ViewPhanCong.Text = "Xem phân công giảng dạy";
             ViewPhanCong.UseVisualStyleBackColor = true;
@@ -45,7 +45,7 @@
             // 
             // ViewDangKy
             // 
-            ViewDangKy.Location = new Point(505, 382);
+            ViewDangKy.Location = new Point(120, 109);
             ViewDangKy.Name = "ViewDangKy";
             ViewDangKy.Size = new Size(129, 67);
             ViewDangKy.TabIndex = 9;
@@ -55,7 +55,7 @@
             // 
             // FixGrade
             // 
-            FixGrade.Location = new Point(640, 382);
+            FixGrade.Location = new Point(121, 182);
             FixGrade.Name = "FixGrade";
             FixGrade.Size = new Size(129, 67);
             FixGrade.TabIndex = 10;
@@ -88,8 +88,8 @@
 
         #endregion
 
-        private Button ViewPhanCong;
-        private Button ViewDangKy;
-        private Button FixGrade;
+        protected Button ViewPhanCong;
+        protected Button ViewDangKy;
+        protected Button FixGrade;
     }
 }

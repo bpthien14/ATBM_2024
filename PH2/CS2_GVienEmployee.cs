@@ -18,7 +18,7 @@ namespace QLDLNB_PH1.PH2
             InitializeComponent();
         }
 
-        private void ViewPhanCong_Click(object sender, EventArgs e)
+        public virtual void ViewPhanCong_Click(object sender, EventArgs e)
         {
             string query = "SELECT * FROM SEC_ADM.UV_GIANGVIEN_PHANCONG";
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
@@ -27,7 +27,7 @@ namespace QLDLNB_PH1.PH2
 
         }
 
-        private void ViewDangKy_Click(object sender, EventArgs e)
+        public void ViewDangKy_Click(object sender, EventArgs e)
         {
             string query = "SELECT * FROM SEC_ADM.UV_GIANGVIEN_DANGKY";
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
@@ -35,7 +35,7 @@ namespace QLDLNB_PH1.PH2
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        private void FixGrade_Click(object sender, EventArgs e)
+        public void FixGrade_Click(object sender, EventArgs e)
         {
             if (UserBUS.Instance.FixGrade(dataGridView1))
             {

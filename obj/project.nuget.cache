@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ALKoTEAftU5v89Oe52Sqcmzx8aQ/5KLA9gRBilHZl6zfekGq5jkJXN2P3J8gcXKb6b7+4rZt5Z6CLUom7l0rXw==",
+  "dgSpecHash": "0iA1BeM2HRzVWjRSoQBZQarWua3MN4B7//Rh70PQqN/4FEo3IkwQ+dSbxkkLNhEi3nHgE77fVJScOEs3t2+nRQ==",
   "success": true,
-  "projectFilePath": "E:\\Workspace2\\ATBM\\PH1\\QLDLNB\\QLDLNB_PH1.csproj",
+  "projectFilePath": "E:\\Workspace2\\ATBM\\PH1\\ATBM_2024\\QLDLNB_PH1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thien\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Thien\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.130\\oracle.manageddataaccess.core.3.21.130.nupkg.sha512",

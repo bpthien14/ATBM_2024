@@ -82,7 +82,9 @@ namespace QLDLNB_PH1
                         }
                         else if (roles.Contains("RL_TRUONG_DON_VI"))
                         {
-
+                            CS4_TRUONGDONVI frmEmployee4 = new CS4_TRUONGDONVI();
+                            frmEmployee4.Show();
+                            this.Hide();
                         }
                         else if (roles.Contains("RL_GIAO_VU"))
                         {

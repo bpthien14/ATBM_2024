@@ -516,7 +516,165 @@ namespace QLDLNB_PH1.Connector
             }
 
         }
+        public bool FixPhanCongTRUONGDONVI(PhanCongDTO OldUser, PhanCongDTO User)
+        {
+            /*
+            bool kt = false;
+            MessageBox.Show(" "+OldUser.MAHP+" | "+OldUser.HK+" | "+User.MAHP+" | "+User.HK );
+            string query = "UPDATE SEC_ADM.PHANCONG SET  MAHP = :NEWMAHP , MAGV = :NEWMAGV , HK = :NEWHK , NAM = :NEWNAM, MACT = :NEWMACT" +
+                " WHERE MAHP = :OLDMAHP ,  MAGV = :OLDMAGV , HK = :OLDHK , NAM = :OLDNAM , MACT = :OLDMACT "; 
 
+            OracleParameter[] parameters = new OracleParameter[]
+            {
+                
+                new OracleParameter(":NEWMAHP", OracleDbType.Varchar2, User.MAHP,  ParameterDirection.Input),
+                
+                new OracleParameter(":NEWMAGV", OracleDbType.Varchar2, User.MAGV,  ParameterDirection.Input),
+                
+                new OracleParameter(":NEWHK", OracleDbType.Int32, User.HK,  ParameterDirection.Input),
+                
+                new OracleParameter(":NEWNAM", OracleDbType.Int32, User.NAM,  ParameterDirection.Input),
+                
+                new OracleParameter(":NEWMACT", OracleDbType.Varchar2, User.MACT,  ParameterDirection.Input),
+
+                new OracleParameter(":OLDMAHP", OracleDbType.Varchar2,  OldUser.MAHP, ParameterDirection.Input),
+                new OracleParameter(":OLDMAGV", OracleDbType.Varchar2,  OldUser.MAGV, ParameterDirection.Input),
+                new OracleParameter(":OLDHK", OracleDbType.Int32,  OldUser.HK, ParameterDirection.Input),
+                new OracleParameter(":OLDNAM", OracleDbType.Int32,  OldUser.NAM, ParameterDirection.Input),
+                new OracleParameter(":OLDMACT", OracleDbType.Varchar2,  OldUser.MACT, ParameterDirection.Input)
+
+            };
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
+            {
+                kt = true;
+            }
+            return kt;
+            */
+            try
+            {
+                bool kt = false;
+                StaffConn staffConn = new StaffConn();
+                //string query = "UPDATE SEC_ADM.PHANCONG SET MAGV = 'NS030' WHERE MAHP = 'HP003' AND HK = 3 AND NAM = 2023 AND MACT = 'CTTT';";
+                string query = "UPDATE SEC_ADM.UV_TRUONGDONVI_PHANCONG SET MAHP = :NEWMAHP , MAGV = :NEWMAGV , HK = :NEWHK , NAM = :NEWNAM , MACT = :NEWMACT WHERE MAHP = :OLDMAHP AND MAGV = :OLDMAGV AND HK = :OLDHK AND NAM = :OLDNAM AND MACT = :OLDMACT ";
+                using (OracleConnection connection = new OracleConnection(StaffConn._connStr))
+                {
+                    connection.Open();
+                    using (OracleCommand command = new OracleCommand(query, connection))
+                    {
+
+                        //command.CommandText = query;
+
+                        command.Parameters.Add(":NEWMAHP", OracleDbType.Varchar2).Value = User.MAHP;
+                        command.Parameters.Add(":NEWMAGV", OracleDbType.Varchar2).Value = User.MAGV;
+                        command.Parameters.Add(":NEWHK", OracleDbType.Int32).Value = User.HK;
+                        command.Parameters.Add(":NEWNAM", OracleDbType.Int32).Value = User.NAM;
+                        command.Parameters.Add(":NEWMACT", OracleDbType.Varchar2).Value = User.MACT;
+
+                        command.Parameters.Add(":OLDMAHP", OracleDbType.Varchar2).Value = OldUser.MAHP;
+                        command.Parameters.Add(":OLDMAGV", OracleDbType.Varchar2).Value = OldUser.MAGV;
+                        command.Parameters.Add(":OLDHK", OracleDbType.Int32).Value = OldUser.HK;
+                        command.Parameters.Add(":OLDNAM", OracleDbType.Int32).Value = OldUser.NAM;
+                        command.Parameters.Add(":OLDMACT", OracleDbType.Varchar2).Value = OldUser.MACT;
+
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            kt = true;
+                        }
+                    }
+
+                    connection.Close();
+                }
+                return kt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+                // You can handle or log the exception as per your requirement
+                return false;
+            }
+
+        }
+        public bool addPHANCONG(PhanCongDTO User)
+        {
+
+            try
+            {
+                bool kt = false;
+                StaffConn staffConn = new StaffConn();
+                MessageBox.Show(User.MAGV + "|" + User.MAHP + "|" + User.HK + "|" + User.NAM + "|" + User.MACT);
+                string query = "INSERT INTO SEC_ADM.PHANCONG( MAHP , MAGV , HK, NAM , MACT ) VALUES ( :MAHP , :MAGV , :HK , :NAM , :MACT )";
+                using (OracleConnection connection = new OracleConnection(StaffConn._connStr))
+                {
+                    connection.Open();
+                    using (OracleCommand command = new OracleCommand(query, connection))
+                    {
+                        command.Parameters.Add(":MAHP", OracleDbType.Varchar2).Value = User.MAHP;
+                        command.Parameters.Add(":MAGV", OracleDbType.Varchar2).Value = User.MAGV;
+                        command.Parameters.Add(":HK", OracleDbType.Int32).Value = User.HK;
+                        command.Parameters.Add(":NAM", OracleDbType.Int32).Value = User.NAM;
+                        command.Parameters.Add(":MACT", OracleDbType.Varchar2).Value = User.MACT;
+
+
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            kt = true;
+                        }
+                    }
+
+                    connection.Close();
+                }
+                return kt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+                // You can handle or log the exception as per your requirement
+                return false;
+            }
+
+        }
+        public bool deletePHANCONG(PhanCongDTO User)
+        {
+
+            try
+            {
+                bool kt = false;
+                StaffConn staffConn = new StaffConn();
+                //MessageBox.Show(User.MaSV+"|"+ User.MaGV+"|"+ User.MaHP +"|"+ User.MaCT+"|"+ User.NAM+"|"+ User.HK);
+                string query = "DELETE FROM SEC_ADM.UV_TRUONGDONVI_PHANCONG  WHERE MAGV = :MAGV AND MAHP = :MAHP AND NAM = :NAM AND HK = :HK AND MACT = :MACT ";
+                using (OracleConnection connection = new OracleConnection(StaffConn._connStr))
+                {
+                    connection.Open();
+                    using (OracleCommand command = new OracleCommand(query, connection))
+                    {
+                        
+                        command.Parameters.Add(":MAGV", OracleDbType.Varchar2).Value = User.MAGV;
+                        command.Parameters.Add(":MAHP", OracleDbType.Varchar2).Value = User.MAHP;
+                        command.Parameters.Add(":NAM", OracleDbType.Int32).Value = User.NAM;
+                        command.Parameters.Add(":HK", OracleDbType.Int32).Value = User.HK;
+                        command.Parameters.Add(":MACT", OracleDbType.Varchar2).Value = User.MACT;
+                        //MessageBox.Show(command.CommandText);
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            kt = true;
+                        }
+                    }
+
+                    connection.Close();
+                }
+                return kt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+                // You can handle or log the exception as per your requirement
+                return false;
+            }
+
+        }
 
 
 

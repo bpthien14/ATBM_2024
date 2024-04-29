@@ -26,5 +26,8 @@
     <Compile Update="PH2\CS3_GVuEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PH2\CS4_TRUONGDONVI.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

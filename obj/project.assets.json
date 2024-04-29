@@ -588,11 +588,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Workspace2\\ATBM\\PH1\\QLDLNB\\QLDLNB_PH1.csproj",
+      "projectUniqueName": "E:\\Workspace2\\ATBM\\PH1\\ATBM_2024\\QLDLNB_PH1.csproj",
       "projectName": "QLDLNB_PH1",
-      "projectPath": "E:\\Workspace2\\ATBM\\PH1\\QLDLNB\\QLDLNB_PH1.csproj",
+      "projectPath": "E:\\Workspace2\\ATBM\\PH1\\ATBM_2024\\QLDLNB_PH1.csproj",
       "packagesPath": "C:\\Users\\Thien\\.nuget\\packages\\",
-      "outputPath": "E:\\Workspace2\\ATBM\\PH1\\QLDLNB\\obj\\",
+      "outputPath": "E:\\Workspace2\\ATBM\\PH1\\ATBM_2024\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Thien\\AppData\\Roaming\\NuGet\\NuGet.Config",
