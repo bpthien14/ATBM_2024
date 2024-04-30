@@ -24,6 +24,7 @@ namespace QLDLNB_PH1.PH2
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.ReadOnly = false;
         }
 
         private void fixPhoneOrAddress_Click(object sender, EventArgs e)
@@ -41,6 +42,8 @@ namespace QLDLNB_PH1.PH2
 
         private void ViewHocPhan_Click(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
+
             string query = "SELECT * FROM SEC_ADM.HOCPHAN";
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -49,6 +52,8 @@ namespace QLDLNB_PH1.PH2
 
         private void ViewKHMo_Click(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
+
             string query = "SELECT * FROM SEC_ADM.KHMO";
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -83,6 +88,8 @@ namespace QLDLNB_PH1.PH2
                 MessageBox.Show("Thêm đăng ký thành công!");
                 // Cập nhật giao diện hiển thị danh sách đăng ký sau khi thêm thành công
                 //ViewDANGKY_Click(sender, e);
+                button1_Click(sender, e);
+
             }
             else
             {
@@ -115,11 +122,22 @@ namespace QLDLNB_PH1.PH2
                 MessageBox.Show("Xóa đăng ký thành công!");
                 // Cập nhật giao diện hiển thị danh sách đăng ký sau khi xóa thành công
                 //ViewDANGKY_Click(sender, e);
+                button1_Click(sender, e);
+
             }
             else
             {
                 MessageBox.Show("Xóa đăng ký không thành công!");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM SEC_ADM.DANGKY";
+            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(query);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.ReadOnly = true;
         }
     }
 }

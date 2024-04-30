@@ -48,6 +48,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             ViewHocPhan.Location = new Point(400, 233);
             ViewHocPhan.Name = "ViewHocPhan";
-            ViewHocPhan.Size = new Size(188, 58);
+            ViewHocPhan.Size = new Size(188, 54);
             ViewHocPhan.TabIndex = 3;
             ViewHocPhan.Text = "Xem Học phần";
             ViewHocPhan.UseVisualStyleBackColor = true;
@@ -96,7 +97,7 @@
             // 
             ViewKHMo.Location = new Point(594, 233);
             ViewKHMo.Name = "ViewKHMo";
-            ViewKHMo.Size = new Size(188, 58);
+            ViewKHMo.Size = new Size(188, 54);
             ViewKHMo.TabIndex = 4;
             ViewKHMo.Text = "Xem Khóa Học Mở";
             ViewKHMo.UseVisualStyleBackColor = true;
@@ -104,6 +105,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(textMACT);
             panel1.Controls.Add(textNAM);
             panel1.Controls.Add(textHK);
@@ -120,7 +122,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 304);
             panel1.Name = "panel1";
-            panel1.Size = new Size(453, 187);
+            panel1.Size = new Size(591, 187);
             panel1.TabIndex = 5;
             // 
             // textMACT
@@ -167,7 +169,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(240, 144);
+            button2.Location = new Point(401, 148);
             button2.Name = "button2";
             button2.Size = new Size(182, 29);
             button2.TabIndex = 7;
@@ -177,7 +179,7 @@
             // 
             // updateDKy
             // 
-            updateDKy.Location = new Point(33, 144);
+            updateDKy.Location = new Point(209, 148);
             updateDKy.Name = "updateDKy";
             updateDKy.Size = new Size(186, 29);
             updateDKy.TabIndex = 6;
@@ -239,11 +241,21 @@
             label1.TabIndex = 0;
             label1.Text = "MASV";
             // 
+            // button1
+            // 
+            button1.Location = new Point(17, 149);
+            button1.Name = "button1";
+            button1.Size = new Size(186, 26);
+            button1.TabIndex = 6;
+            button1.Text = "Xem Học Phần Đăng Ký";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // CS6_SINHVIEN
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 528);
+            ClientSize = new Size(802, 528);
             Controls.Add(panel1);
             Controls.Add(ViewKHMo);
             Controls.Add(ViewHocPhan);
@@ -280,5 +292,6 @@
         private TextBox textMASV;
         private Button button2;
         private Button updateDKy;
+        private Button button1;
     }
 }
