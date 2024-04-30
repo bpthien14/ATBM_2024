@@ -3,6 +3,7 @@ using Oracle.ManagedDataAccess.Types;
 using QLDLNB.Connector;
 using QLDLNB_PH1.Connector;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -76,9 +77,10 @@ namespace QLDLNB_PH1.PH2
         }
         protected void PushNotification_Click(object sender, EventArgs e)
         {
-            string querry = " SELECT * FROM SEC_ADM.THONGBAO ";
-            string notification = DataProvider.Instance.ExecuteReader(querry);
-            MessageBox.Show(notification);
+            string querry = " SELECT NOIDUNG, CAPBAC, LINHVUC, COSO FROM SEC_ADM.THONGBAO ";
+            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuerry(querry);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -243,6 +243,22 @@ namespace QLDLNB_PH1.Connector
             // Gọi hàm Add_NhanVien từ UserDAO để thêm nhân viên
             return UserDAO.Instance.Add_NhanVien(user);
         }
+        public bool fixPhoneOrAddress(DataGridView data)
+        {
+            DataGridViewRow row = data.SelectedCells[0].OwningRow;
+            string MASV = row.Cells["MASV"].Value.ToString();
+
+            string DIACHI = row.Cells["DCHI"].Value.ToString();
+            string DIENTHOAI = row.Cells["DT"].Value.ToString();
+
+            SVienDTO user = new SVienDTO()
+            {
+                MASV = MASV,
+                DCHI= DIACHI,
+                DT = DIENTHOAI
+            };
+            return UserDAO.Instance.UpdateStudentContactInfo(user);
+        }
 
 
 

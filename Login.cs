@@ -106,8 +106,10 @@ namespace QLDLNB_PH1
                             frmEmployee1.Show();
                             this.Hide();
                         }
-                        else if (roles.Contains("RL_SINHVIEN"))
+                        else if (roles.Contains("RL_SINH_VIEN"))
                         {
+                            CS6_SINHVIEN frmEmployee1 = new CS6_SINHVIEN();
+                            frmEmployee1.Show();
                             this.Hide();
                         }
                         else

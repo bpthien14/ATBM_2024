@@ -929,6 +929,84 @@ namespace QLDLNB_PH1.Connector
             }
         }
 
+        public bool UpdateStudentContactInfo(SVienDTO user)
+        {
+            bool isSuccess = false;
+            string query = "UPDATE SEC_ADM.SINHVIEN SET DCHI = :ĐCHI, DT = :ĐT WHERE MASV = :MASV";
+
+            OracleParameter[] parameters = new OracleParameter[]
+            {
+                new OracleParameter(":ĐCHI", OracleDbType.Varchar2, user.DCHI, ParameterDirection.Input),
+                new OracleParameter(":ĐT", OracleDbType.Varchar2, user.DT, ParameterDirection.Input),
+                new OracleParameter(":MASV", OracleDbType.Varchar2, user.MASV, ParameterDirection.Input)
+            };
+
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
+            {
+                isSuccess = true;
+            }
+            return isSuccess;
+        }
+
+        public bool AddDANGKY(DKiDTO registration)
+        {
+            bool isSuccess = false;
+            string query = "INSERT INTO SEC_ADM.DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT) " +
+                           "VALUES (:MASV, :MAGV, :MAHP, :HK, :NAM, :MACT)";
+
+            OracleParameter[] parameters = new OracleParameter[]
+            {
+                new OracleParameter(":MASV", OracleDbType.Varchar2, registration.MaSV, ParameterDirection.Input),
+                new OracleParameter(":MAGV", OracleDbType.Varchar2, registration.MaGV, ParameterDirection.Input),
+                new OracleParameter(":MAHP", OracleDbType.Varchar2, registration.MaHP, ParameterDirection.Input),
+                new OracleParameter(":HK", OracleDbType.Int32, registration.HK, ParameterDirection.Input),
+                new OracleParameter(":NAM", OracleDbType.Int32, registration.NAM, ParameterDirection.Input),
+                new OracleParameter(":MACT", OracleDbType.Varchar2, registration.MaCT, ParameterDirection.Input)
+            };
+
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
+            {
+                isSuccess = true;
+            }
+
+            return isSuccess;
+        }
+        public bool deleteDANGKY(DKiDTO registration)
+        {
+            try
+            {
+                bool isSuccess = false;
+                string query = "DELETE FROM SEC_ADM.DANGKY WHERE MASV = :MASV AND MAGV = :MAGV AND MAHP = :MAHP AND HK = :HK AND NAM = :NAM AND MACT = :MACT";
+
+                using (OracleConnection connection = new OracleConnection(StaffConn._connStr))
+                {
+                    connection.Open();
+                    using (OracleCommand command = new OracleCommand(query, connection))
+                    {
+                        command.Parameters.Add(":MASV", OracleDbType.Varchar2).Value = registration.MaSV;
+                        command.Parameters.Add(":MAGV", OracleDbType.Varchar2).Value = registration.MaGV;
+                        command.Parameters.Add(":MAHP", OracleDbType.Varchar2).Value = registration.MaHP;
+                        command.Parameters.Add(":HK", OracleDbType.Int32).Value = registration.HK;
+                        command.Parameters.Add(":NAM", OracleDbType.Int32).Value = registration.NAM;
+                        command.Parameters.Add(":MACT", OracleDbType.Varchar2).Value = registration.MaCT;
+
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            isSuccess = true;
+                        }
+                    }
+                    connection.Close();
+                }
+                return isSuccess;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+                // You can handle or log the exception as per your requirement
+                return false;
+            }
+        }
 
 
 

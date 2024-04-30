@@ -70,3 +70,4 @@ E:\Workspace2\ATBM\PH1\ATBM_2024\obj\Debug\net6.0-windows\QLDLNB_PH1.genruntimec
 E:\Workspace2\ATBM\PH1\ATBM_2024\obj\Debug\net6.0-windows\ref\QLDLNB_PH1.dll
 E:\Workspace2\ATBM\PH1\ATBM_2024\obj\Debug\net6.0-windows\QLDLNB_PH1.PH2.CS4_TRUONGDONVI.resources
 E:\Workspace2\ATBM\PH1\ATBM_2024\obj\Debug\net6.0-windows\QLDLNB_PH1.PH2.CS5_TRUONGKHOA.resources
+E:\Workspace2\ATBM\PH1\ATBM_2024\obj\Debug\net6.0-windows\QLDLNB_PH1.PH2.CS6_SINHVIEN.resources
